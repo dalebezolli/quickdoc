@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>
+		{{- .Site.Title }} 
+		{{ if .Page.Title }} | {{ end }}
+		{{ .Page.Title -}}
+	</title>
+
+	<script src="{{ .Site.BaseURL }}test.js" defer></script>
+	<link rel="stylesheet" href="{{ .Site.BaseURL }}style.css"></script>
+</head>
+<body>
+	{{ partial "nav.html" }}
+
+	{{ block "main" . }}
+	{{ end }}
+	<iframe id="linkviewer" class="linkviewer js-linkviewer--hidden" />
+</body>
+</html>
