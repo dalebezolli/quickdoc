@@ -14,7 +14,7 @@
 }
 
 .linkviewer__data {
-	width: max-content;
+	width: 100%;
 }
 
 .js-linkviewer--hidden {
