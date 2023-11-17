@@ -15,8 +15,11 @@
 <body>
 	{{ partial "nav.html" }}
 
-	{{ block "main" . }}
-	{{ end }}
-	<iframe id="linkviewer" class="linkviewer js-linkviewer--hidden" />
+	<main id="note">
+		{{ block "main" . }}
+		{{ end }}
+	</main>
+
+	<div id="linkviewer" class="linkviewer js-linkviewer--hidden"></div>
 </body>
 </html>
