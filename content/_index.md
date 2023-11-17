@@ -1,9 +1,18 @@
 ---
-title: Hello World
+title: 🤓  Development Hub
 ---
 
-# Hello World
-Testing if local work [references](#Relative%20Link)
+# 🤓 Development Hub
+The only and best place for a programmer to be. Inside my mind.
 
-## Relative Link
-is it possible to go into a [relative link](./about) though
+Check ~~here~~ for HR interview prep... and here for achievements.
+## Languages
+- [HTML & CSS](markup-styling-languages#CSS)
+- [SQL](sql)
+
+## Fields
+[Design & Architecture](https://roadmap.sh/software-design-architecture)
+
+## Tools
+
+## Ideas
