@@ -9,16 +9,24 @@
 		{{ .Page.Title -}}
 	</title>
 
-	<script src="{{ .Site.BaseURL }}test.js" defer></script>
 	<link rel="stylesheet" href="{{ .Site.BaseURL }}style.css"></script>
+
+	<script src="{{ .Site.BaseURL }}link-viewer.js" defer></script>
+	<script src="{{ .Site.BaseURL }}note-nav.js" defer></script>
 </head>
 <body>
-	{{ partial "nav.html" }}
+	{{ partial "docsmenu.html" . }}
+
+	<nav>
+		<ul id="note-nav-list">
+		</ul>
+	</nav>
 
 	<main id="note">
 		{{ block "main" . }}
 		{{ end }}
 	</main>
+
 
 	<div id="linkviewer" class="linkviewer js-linkviewer--hidden"></div>
 </body>
