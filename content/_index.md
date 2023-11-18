@@ -1,5 +1,6 @@
 ---
 title: 🤓  Development Hub
+menu: docs
 ---
 
 # 🤓 Development Hub
