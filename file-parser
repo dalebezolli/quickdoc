@@ -1,0 +1,19 @@
+#! /bin/bash
+
+if [ ! -d ./content  ] ; then
+	mkdir ./content
+fi
+
+for file in ./docs/*.md; do
+	filename=$(echo $file | egrep -o "[^//]*$")
+
+	fileTitle=$(egrep "^# .*$" ./$file | cut -d ' ' -f2-)
+	selectedNavMenu=docs # $(pwd | egrep -o "[a-z-]+$")
+	echo "Parsing $filename (title=$fileTitle menu=$selectedNavMenu path=$file)";
+	sed "1i ---\ntitle=$fileTitle\nmenu=$selectedNavMenu\n---\n" ./$file > ./content/$filename
+	sed -i "s/.md//g" ./content/$filename
+	
+	if [[ $file =~ "hub-" ]]; then
+		mv ./content/$filename ./content/_index.md
+	fi
+done
