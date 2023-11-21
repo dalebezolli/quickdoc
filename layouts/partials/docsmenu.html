@@ -1,23 +1,17 @@
-<p>
-#######################
-</p>
-
 {{- with index site.Menus "docs" }}
 	<nav>
-		<ul>
+		<ul class="nav-list">
 			{{ range . }}	
-				<li>
-					{{ if $.IsMenuCurrent .Menu . }}
-						<a class="selected" href="{{ .URL }}">{{ .Name }}</a>
-					{{ else }}
-						<a href="{{ .URL }}">{{ .Name }}</a>
-					{{ end }}
-				</li>
+				{{ if $.IsMenuCurrent .Menu . }}
+					<li class="nav-item nav-item--selected">
+						<a class="nav-item__link nav-item__link--selected" href="{{ .URL }}">{{ .Name }}</a>
+					</li>
+				{{ else }}
+					<li class="nav-item">
+						<a class="nav-item__link" href="{{ .URL }}">{{ .Name }}</a>
+					</li>
+				{{ end }}
 			{{ end }}
 		</ul>
 	</nav>
 {{- end }}
-
-<p>
-#######################
-</p>
