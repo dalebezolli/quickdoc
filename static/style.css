@@ -38,6 +38,8 @@ body {
 
 	--linkviewer-size: 400px;
 
+	--br-primary: .5rem;
+
 	background: var(--color-neutral-900) !important;
 	color: var(--color-neutral-400) !important;
 
@@ -85,7 +87,7 @@ h1, h2, h3, h4, h5, h6 {
 	background: none;
 	color: var(--color-neutral-400);
 	border: none;
-	border-radius: 32px;
+	border-radius: var(--br-primary);
 
 	cursor: pointer;
 }
@@ -219,7 +221,7 @@ h1, h2, h3, h4, h5, h6 {
 	overflow: auto;
 	background: #1a1a1a;
 
-	border-radius: 32px;
+	border-radius: var(--br-primary);
 }
 
 .linkviewer__data {
