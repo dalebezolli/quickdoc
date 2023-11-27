@@ -1,0 +1,34 @@
+path=$1
+
+if [[ $path = "" ]]; then
+	exit 1
+fi
+
+if [ ! -f $path ]; then
+	exit 2
+fi
+
+if [ ! -f index.json ]; then
+	touch index.json
+	echo -n "{\"" >> index.json
+else
+	echo -n ",{\"" >> index.json
+fi
+
+
+prevLine=""
+IFS=$'\t\n'
+for line in $(cat "$path"); do
+	if [[ $(echo $line | egrep "#") != "" ]]; then
+		if [[ $prevLine != "" ]]; then 
+		 	echo -n "\"},{\"" >> index.json
+		fi
+
+		echo -n "title\":\"$(echo $line | cut -d ' ' -f2-)\",\"details\":\"" >> index.json
+	else
+		echo -n $line >> index.json
+	fi
+
+	prevLine=$line
+done
+echo "\"}" >> index.json
