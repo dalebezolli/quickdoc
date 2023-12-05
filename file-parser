@@ -19,5 +19,8 @@ for file in ./docs/*.md; do
 
 	./generate-file-index $file
 done
+
 sed -i "1i [" index.json
 echo ] >> index.json
+
+mv index.json static/
