@@ -1,3 +1,5 @@
+#!/bin/bash
+
 path=$1
 
 if [[ $path = "" ]]; then
@@ -17,14 +19,24 @@ fi
 
 
 prevLine=""
+currentHash=
 IFS=$'\t\n'
 for line in $(cat "$path"); do
-	if [[ $(echo $line | egrep "#") != "" ]]; then
+	if [[ $(echo $line | egrep "^#") != "" ]]; then
 		if [[ $prevLine != "" ]]; then 
-		 	echo -n "\"},{\"" >> index.json
+			echo -n "\"},{\"" >> index.json
+		fi	
+
+		title=$(echo $line | cut -d ' ' -f2-)
+		url_hash=$(echo $line | cut -d ' ' -f2- | tr " " "-" | tr "[:upper:]" "[:lower:]")
+		url_base_path=$(echo $path | egrep -o "[.a-z-]*$" | egrep -o "^[a-z-]*")
+		if [[ $(echo $url_base_path | egrep "^hub-") != "" ]]; then
+			url_base_path=""
 		fi
 
-		echo -n "title\":\"$(echo $line | cut -d ' ' -f2-)\",\"details\":\"" >> index.json
+		echo -n "title\":\"$title\"" >> index.json
+		echo -n ",\"url\":\"$url_base_path/#$url_hash\"" >> index.json
+		echo -n ",\"details\":\"" >> index.json
 	else
 		echo -n $line >> index.json
 	fi
