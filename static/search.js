@@ -38,6 +38,12 @@ document.querySelector(`.${CLASS_DIV_SEARCH_BOX}`).addEventListener('click', eve
 	displayResults([]);
 });
 
+document.addEventListener('keyup', event => {
+	if(event.key === 'Escape' && !domSearchBox.classList.contains('js-search-box--hidden')) {
+		domSearchBox.classList.add('js-search-box--hidden')
+	}
+});
+
 document.querySelector(`.${CLASS_INPUT_SEARCH}`).addEventListener('keyup', event => {
 	const fieldSearch = event.target;
 	const resultsList = query(fieldSearch.value);
