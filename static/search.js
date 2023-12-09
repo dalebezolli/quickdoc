@@ -1,6 +1,6 @@
 'use strict';
 
-const INDEX_PATH = '/index.json';
+const INDEX_PATH = 'index.json';
 
 const CLASS_BUTTON_OPEN_SEARCH = 'js-button-open-search';
 const CLASS_DIV_SEARCH_BOX = 'js-search-box';
@@ -60,7 +60,7 @@ async function createSearch() {
 		includeMatches: true 
 	};
 
-	const indexData = await (await fetch(INDEX_PATH)).json();
+	const indexData = await (await fetch(window.baseURL + INDEX_PATH)).json();
 	return new Fuse(indexData, fuseOptions);
 }
 

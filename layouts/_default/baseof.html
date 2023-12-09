@@ -19,6 +19,10 @@
 	<script src="{{ .Site.BaseURL }}link-viewer.js" defer></script>
 	<script src="{{ .Site.BaseURL }}note-nav.js" defer></script>
 	<script src="{{ .Site.BaseURL }}search.js" defer></script>
+
+	<script>
+		window.baseURL = {{ .Site.BaseURL }}
+	</script>
 </head>
 <body>
 	<header class="top-header">
