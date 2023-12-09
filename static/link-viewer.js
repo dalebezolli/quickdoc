@@ -23,6 +23,7 @@ function isALinkViewer() {
 
 function setupLinkViewerHoverPopupEventHandlers() {
 	for(const link of document.querySelectorAll("#note a")) {
+		if(!link.href.startsWith(window.location.origin)) continue;
 		link.addEventListener('mouseenter', event => {
 			const debugString = `LINK: Attempting to SHOW with ${event.target.href} (displayReference: ${displayReference}, hideReference: ${hideReference})`;
 			console.debug(debugString);
