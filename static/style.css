@@ -347,6 +347,8 @@ a {
 
 .results-list {
 	flex-grow: 1;
+	max-height: 70vh;
+	overflow-y: scroll;
 
 	display: flex;
 	flex-direction: column;
