@@ -14,15 +14,23 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&family=Poppins:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
 
+	<script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.js"></script>
+
 	<script src="{{ .Site.BaseURL }}link-viewer.js" defer></script>
 	<script src="{{ .Site.BaseURL }}note-nav.js" defer></script>
+	<script src="{{ .Site.BaseURL }}search.js" defer></script>
 </head>
 <body>
 	<header class="top-header">
 		<a class="logo" href=".">{{- .Site.Title -}}</a>
 
-		<div class="search-placeholder">
-		</div>
+		<button class="button-open-search js-button-open-search">
+			<svg width="16" height="16" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M9.5 8.5L11.5 10.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+				<path d="M1.5 5.5C1.5 7.70915 3.29086 9.5 5.5 9.5C6.6065 9.5 7.60805 9.05075 8.3322 8.32465C9.05385 7.6011 9.5 6.60265 9.5 5.5C9.5 3.29086 7.70915 1.5 5.5 1.5C3.29086 1.5 1.5 3.29086 1.5 5.5Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+			</svg>	
+			Search
+		</button>
 
 		<div class="top-header__buttons">
 			<button class="button-theme button">
@@ -88,6 +96,23 @@
 		</main>
 	</div>
 
+	<div class="search-box-shadow js-search-box js-search-box--hidden">
+		<div class="search-box">
+			<form id="search-form">
+				<div class="search-bar">
+					<svg width="16" height="16" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M9.5 8.5L11.5 10.5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+						<path d="M1.5 5.5C1.5 7.70915 3.29086 9.5 5.5 9.5C6.6065 9.5 7.60805 9.05075 8.3322 8.32465C9.05385 7.6011 9.5 6.60265 9.5 5.5C9.5 3.29086 7.70915 1.5 5.5 1.5C3.29086 1.5 1.5 3.29086 1.5 5.5Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+					</svg>	
+					<input class="js-search-field search-bar__input" placeholder="Search" />
+				</div>
+			</form>
+
+			<ul class="js-results-list js-results-list--hidden results-list">
+				<li><p class="results-list__no-results">No results</p></li>
+			</ul>
+		</div>
+	</div>
 
 	<div id="linkviewer" class="linkviewer js-linkviewer--hidden"></div>
 </body>
