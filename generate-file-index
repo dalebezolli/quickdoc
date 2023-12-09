@@ -35,7 +35,7 @@ for line in $(cat "$path"); do
 		fi
 
 		echo -n "title\":\"$title\"" >> index.json
-		echo -n ",\"url\":\"$url_base_path/#$url_hash\"" >> index.json
+		echo -n ",\"url\":\"/$url_base_path#$url_hash\"" >> index.json
 		echo -n ",\"details\":\"" >> index.json
 	else
 		echo -n $line >> index.json
