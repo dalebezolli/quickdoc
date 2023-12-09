@@ -370,6 +370,10 @@ a {
 	border-left: 0.125rem solid var(--color-neutral-500);
 }
 
+.results-item:where(:hover, :focus) {
+	background: var(--color-neutral-800);
+}
+
 .results-item__title {
 	font-weight: bold;
 }
