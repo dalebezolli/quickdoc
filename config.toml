@@ -1,3 +1,5 @@
-baseURL = 'http://example.org/'
-languageCode = 'en-us'
-title = 'Personal Docs'
+title = 'QuickDoc'
+
+[params]
+contribute = 'https://github.com/dalebezolli/documentation-base'
+
