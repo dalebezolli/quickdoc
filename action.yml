@@ -3,5 +3,5 @@ description: 'None?'
 runs:
   using: 'composite'
   steps:
-    - run: ls -lR
+    - run: ./file-parser
       shell: bash
