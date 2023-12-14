@@ -3,6 +3,13 @@ description: 'None?'
 runs:
   using: 'composite'
   steps:
+    - uses: actions/checkout@v4
+      with:
+        repository: dalebezolli/documentation-base
+        path: .
+    - uses: actions/checkout@v4
+      with:
+        path: docs
     - run: $([ -e ./docs/config.* ] && rm ./config.* && mv ./docs/config.* ./)
       shell: bash
     - run: mv ./docs/docs/* ./docs/; rmdir ./docs/docs
