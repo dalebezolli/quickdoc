@@ -1,0 +1,7 @@
+name: 'Prepare Data'
+description: 'None?'
+runs:
+  using: 'composite'
+  steps:
+    - run: ls -lR
+      shell: bash
