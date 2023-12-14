@@ -239,6 +239,16 @@ a {
 	padding-left: 1rem;
 }
 
+.note blockquote {
+	padding-left: 8px;
+	margin-block: 1rem;
+	border-left: 4px solid var(--color-primary-400);
+}
+
+.note blockquote p {
+	padding-bottom: 0;
+}
+
 /* LINK VIEWER */
 .linkviewer {
 	--pos-x: 0px;
