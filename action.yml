@@ -3,5 +3,9 @@ description: 'None?'
 runs:
   using: 'composite'
   steps:
+    - run: $([ -e ./docs/config.* ] && rm ./config.* && mv ./docs/config.* ./)
+      shell: bash
+    - run: mv ./docs/docs/* ./docs/; rmdir ./docs/docs
+      shell: bash
     - run: ./file-parser
       shell: bash
