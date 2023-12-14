@@ -1,5 +1,6 @@
-name: 'Prepare Data'
-description: 'None?'
+name: 'Create Documentation'
+description: 'A GitHub Action to construct a simple documentation page.'
+author: 'Dale Bezolli'
 runs:
   using: 'composite'
   steps:
@@ -33,4 +34,6 @@ runs:
         HUGO_ENVIRONMENT: production
         HUGO_ENV: production
       shell: bash
+
+
 
