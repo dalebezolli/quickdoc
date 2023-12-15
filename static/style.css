@@ -41,7 +41,7 @@ body {
 
 	--linkviewer-size: 400px;
 
-	--br-primary: 8px;
+	--br-primary: 4px;
 
 	background: var(--color-neutral-900) !important;
 	color: var(--color-neutral-400) !important;
@@ -242,11 +242,32 @@ a {
 .note blockquote {
 	padding-left: 8px;
 	margin-block: 1rem;
-	border-left: 4px solid var(--color-primary-400);
+	border-left: var(--br-primary) solid var(--color-primary-400);
 }
 
 .note blockquote p {
 	padding-bottom: 0;
+}
+
+.note pre {
+	margin-bottom: 1rem;
+	padding: 16px;
+	background-color: var(--color-neutral-850) !important;
+	border-radius: var(--br-primary);
+}
+
+.button-secondary {
+	position: absolute;
+	top: 8px;
+	right: 16px;
+	padding: 4px 16px;
+
+	background: transparent;
+	color: var(--color-primary-400);
+	border: 1px solid var(--color-primary-400);
+	border-radius: var(--br-primary);
+
+	cursor: pointer;
 }
 
 /* LINK VIEWER */

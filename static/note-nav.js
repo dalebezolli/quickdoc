@@ -13,6 +13,20 @@ function fillNoteNavigation(noteNavigationRoot, noteWalker) {
 	if(!noteNavigationRoot || !noteWalker) return;
 
 	while(noteWalker.nextNode()) {
+		if(noteWalker.currentNode.tagName === 'PRE') {
+			noteWalker.currentNode.parentNode.style.position = 'relative';
+
+			const buttonCopy = document.createElement('BUTTON');
+			buttonCopy.textContent = 'Copy';
+			buttonCopy.classList.add('button-secondary');
+			noteWalker.currentNode.parentNode.appendChild(buttonCopy);
+
+			buttonCopy.addEventListener('click', event => {
+				const code = event.currentTarget.parentNode.querySelector('pre').textContent;
+				navigator.clipboard.writeText(code);
+			});
+		}
+
 		if(noteWalker.currentNode.tagName != NOTE_HEADINGS_LEVEL) continue;
 
 		const navigationListItem = document.createElement('LI');
