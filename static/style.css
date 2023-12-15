@@ -239,6 +239,12 @@ a {
 	padding-left: 1rem;
 }
 
+.note p code {
+	background: var(--color-neutral-850);
+	padding-inline: 4px;
+	border-radius: var(--br-primary);
+} 
+
 .note blockquote {
 	padding-left: 8px;
 	margin-block: 1rem;
