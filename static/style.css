@@ -215,6 +215,11 @@ a {
 .toc-link {
 	text-decoration: none;
 	color: var(--color-neutral-400);
+
+	background: transparent;
+	border: none;
+
+	cursor: pointer;
 }
 
 .toc-link:where(:hover, :focus) {
