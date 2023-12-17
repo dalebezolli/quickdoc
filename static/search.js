@@ -38,10 +38,22 @@ document.querySelector(`.${CLASS_DIV_SEARCH_BOX}`).addEventListener('click', eve
 	displayResults([]);
 });
 
-document.addEventListener('keyup', event => {
-	if(event.key === 'Escape' && !domSearchBox.classList.contains('js-search-box--hidden')) {
-		domSearchBox.classList.add('js-search-box--hidden')
+document.addEventListener('keydown', event => {
+	if(event.key === '/') {
+		event.preventDefault();
+		domSearchBox.classList.remove('js-search-box--hidden');
+		domSearchField.focus();
+		return;
 	}
+
+	if(event.key === 'Escape' && !domSearchBox.classList.contains('js-search-box--hidden')) {
+		domSearchBox.classList.add('js-search-box--hidden');
+		return;
+	}
+
+});
+
+document.addEventListener('keyup', event => {
 });
 
 document.querySelector(`.${CLASS_INPUT_SEARCH}`).addEventListener('keyup', event => {
