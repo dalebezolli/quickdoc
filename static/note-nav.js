@@ -25,7 +25,7 @@ function noteSetup() {
 				setupHeadingNavigation(noteNavListRoot, noteWalker.currentNode);
 				break;
 			case 'PRE':
-				setupCodeBlocks(node);
+				setupCodeBlocks(noteWalker.currentNode);
 				break;
 		}
 	}
