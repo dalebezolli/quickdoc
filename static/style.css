@@ -279,6 +279,8 @@ a {
 	padding: 16px;
 	background-color: var(--color-neutral-850) !important;
 	border-radius: var(--br-primary);
+
+	overflow: hidden;
 }
 
 .button-secondary {
