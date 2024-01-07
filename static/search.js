@@ -15,12 +15,14 @@ let domSearchField = null;
 let domSearchBox = null;
 let domResultsList = null;
 
-(async function() {
+initializeSearch();
+
+async function initializeSearch() {
 	search = await createSearch();
 	domSearchField = initializeDomSearchBar();
 	domSearchBox = initializeDomSearchBox();
 	domResultsList = initializeDomResultsList();
-})();
+}
 
 document.querySelector(`.${CLASS_BUTTON_OPEN_SEARCH}`).addEventListener('click', event => {
 	if(!domSearchBox) return;
@@ -72,7 +74,14 @@ async function createSearch() {
 		includeMatches: true 
 	};
 
-	const indexData = await (await fetch(window.baseURL + INDEX_PATH)).json();
+	let indexData = null;
+	try {
+		const request = await fetch(window.baseURL + INDEX_PATH);
+		indexData = await request.json();
+	} catch(error) {
+		console.error(error);
+	}
+
 	return new Fuse(indexData, fuseOptions);
 }
 
