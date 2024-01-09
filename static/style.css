@@ -39,6 +39,7 @@ body {
 
 	--color-primary-400: hsl(223, 78%, 59%);
 	--color-primary-400-20: hsla(223, 78%, 59%, .2);
+	--color-primary-400-10: hsla(223, 78%, 59%, .1);
 
 	--linkviewer-size: 400px;
 
@@ -270,6 +271,8 @@ a {
 	padding-left: 8px;
 	margin-block: 1rem;
 	border-left: var(--br-primary) solid var(--color-primary-400);
+
+	background: var(--color-primary-400-10);
 }
 
 .note blockquote p {
