@@ -282,7 +282,7 @@ a {
 	background-color: var(--color-neutral-850) !important;
 	border-radius: var(--br-primary);
 
-	overflow: hidden;
+	overflow-x: auto;
 }
 
 .button-secondary {
