@@ -253,6 +253,7 @@ a {
 
 .note p {
 	padding-bottom: 1rem;
+	text-align: justify;
 }
 
 .note ul, .note ol {
