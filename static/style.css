@@ -323,7 +323,8 @@ a {
 }
 
 .linkviewer__data {
-	width: 100%;
+	max-width: 600px;
+	width: max-content;
 }
 
 .js-linkviewer--hidden {

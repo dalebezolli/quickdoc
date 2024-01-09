@@ -128,7 +128,7 @@ async function constructLinkViewerData(link) {
 	const noteDocument = htmlParser.parseFromString(htmlData, mimeType);
 
 	const divLinkViewerData = document.createElement('DIV');
-	divLinkViewerData.classList.add('linkviewer__data');
+	divLinkViewerData.classList.add('linkviewer__data', 'note');
 
 	if(!url.hash) {
 		divLinkViewerData.innerHTML = noteDocument.getElementById('note').innerHTML;
