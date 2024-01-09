@@ -71,7 +71,11 @@ document.getElementById(ID_FORM_SEARCH).addEventListener('submit', event => {
 async function createSearch() {
 	const fuseOptions = {
 		keys: SEARCH_KEYS, 
-		includeMatches: true 
+		includeMatches: true,
+		threshold: 0,
+		ignoreLocation: true,
+		minMatchCharLength: 3,
+		findAllMatches: true,
 	};
 
 	let indexData = null;
