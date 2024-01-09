@@ -332,7 +332,6 @@ a {
 
 /* SEARCH BOX */
 .search-box {
-	z-index: 100;
 	position: fixed;
 	top: 0px;
 	left: 50vw;
@@ -352,8 +351,11 @@ a {
 
 .search-box-shadow {
 	content: '';
+	z-index: 100;
+
 	position: fixed;
 	inset: 0;
+
 	background: var(--color-neutral-800-90);
 }
 
